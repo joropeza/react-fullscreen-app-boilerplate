@@ -1,0 +1,43 @@
+{
+  "name": "react-fullscreen-app-boilerplate",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joropeza/react-fullscreen-app-boilerplate.git"
+  },
+  "author": "Jon Oropeza <joropeza@gmail.com> (http://jonoropeza.com)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/joropeza/react-fullscreen-app-boilerplate/issues"
+  },
+  "homepage": "https://github.com/joropeza/react-fullscreen-app-boilerplate#readme",
+  "devDependencies": {
+    "babel-core": "^6.6.4",
+    "babel-eslint": "^5.0.0",
+    "babel-loader": "^6.2.4",
+    "babel-preset-es2015": "^6.6.0",
+    "babel-preset-react": "^6.5.0",
+    "babel-preset-stage-0": "^6.5.0",
+    "eslint": "^2.2.0",
+    "eslint-config-airbnb": "^6.0.2",
+    "eslint-plugin-react": "^4.1.0",
+    "react-hot-loader": "^1.3.0",
+    "webpack": "^1.12.14",
+    "webpack-dev-server": "^1.14.1"
+  },
+  "dependencies": {
+    "history": "^2.0.1",
+    "react": "^0.14.7",
+    "react-dom": "^0.14.7",
+    "react-redux": "^4.4.0",
+    "react-router": "^1.0.0",
+    "redux": "^3.3.1",
+    "redux-router": "^1.0.0-beta4",
+    "redux-thunk": "^1.0.3"
+  }
+}

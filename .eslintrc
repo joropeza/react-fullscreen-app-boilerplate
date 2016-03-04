@@ -1,0 +1,32 @@
+{
+    "ecmaFeatures": {
+        "jsx": true,
+        "modules": true
+    },
+    "env": {
+        "browser": true,
+        "es6": true,
+        "node": true
+    },
+    "globals": {
+        "$": false
+    },
+    "parser": "babel-eslint",
+    "extends": "airbnb",
+    "rules": {
+        "block-scoped-var": 0,
+        "comma-dangle": 0,
+        "func-names": 0,
+        "indent": [2, 4],
+        "new-cap": 0,
+        "no-else-return": 0,
+        "no-irregular-whitespace": 0,
+        "no-shadow": 0,
+        "no-use-before-define": 0,
+        "object-shorthand": 0,
+        "padded-blocks": 0
+    },
+    "plugins": [
+        "react"
+    ]
+}
