@@ -32,6 +32,7 @@ const styles = {
 		background: 'rgba(0, 0, 0, .3)',
     	border: '1px solid #000000',
     	overflow: 'auto', 
+        width: '100%'
 	}
 }
 

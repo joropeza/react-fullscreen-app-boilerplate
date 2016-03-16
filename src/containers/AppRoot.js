@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 import FullScreenLayout from '../components/layout/fullscreenLayout';
 
 import HomePageContent from '../components/homePageContent';
 import HeaderContent from '../components/headerContent';
 
-export default class AppRoot extends Component {
+class AppRoot extends Component {
     render() {
+        const { children } = this.props;
 
         const headerOptions = {};
         headerOptions.useHeader = true;
@@ -17,10 +19,22 @@ export default class AppRoot extends Component {
         footerOptions.component = (<h4>Footer</h4>);
 
         const contentOptions = {};
-        contentOptions.component = (<HomePageContent />);
+        contentOptions.component = (children) ? (<div>{children}</div>) : (<HomePageContent />);
 
         return (
 			<FullScreenLayout contentOptions={contentOptions} headerOptions={headerOptions} footerOptions={footerOptions} />
 		);
     }
 }
+
+function mapState(state) {
+    return {
+    };
+}
+
+function mapDispatch(dispatch) {
+    return {
+    };
+}
+
+export default connect(mapState, mapDispatch)(AppRoot);

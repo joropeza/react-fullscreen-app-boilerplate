@@ -7,9 +7,13 @@ import { createHistory } from 'history';
 import { Route } from 'react-router';
 
 import AppRoot from './containers/AppRoot';
+import RouteA from './containers/routeA';
+import RouteB from './containers/routeB';
 
 const routes = (
   <Route path="/" component={AppRoot}>
+    <Route path="a" component={RouteA} />
+    <Route path="b" component={RouteB} />
   </Route>
 );
 
@@ -23,13 +27,13 @@ const store = compose(
 )(createStore)(reducer);
 
 export default class App extends Component {
-  render() {
-    return (
-      <Provider store={store}>
-          <ReduxRouter>
-          	{routes}
-          </ReduxRouter>
-        </Provider>
-    );
-  }
+    render() {
+        return (
+            <Provider store={store}>
+              <ReduxRouter>
+                {routes}
+              </ReduxRouter>
+            </Provider>
+        );
+    }
 }
