@@ -3,7 +3,7 @@ import { Link } from 'react-router';
 
 export default class HeaderContent extends Component {
     render() {
-        const { children } = this.props;
+        const { route } = this.props;
         return (
             <nav className="navbar navbar-default">
         <div className="container-fluid">
@@ -24,7 +24,7 @@ export default class HeaderContent extends Component {
           </div>
           <div id="navbar" className="navbar-collapse collapse">
             <ul className="nav navbar-nav">
-              <li><Link to={'/'}>Home</Link></li>
+              <li className={route === 'HOME' ? 'active' : null}><Link to={'/'}>Home</Link></li>
               <li><Link to={'/a'}>Yo</Link></li>
               <li><Link to={'/b'}>Woah</Link></li>
             </ul>
@@ -36,5 +36,5 @@ export default class HeaderContent extends Component {
 }
 
 HeaderContent.propTypes = {
-    children: PropTypes.element
+    route: PropTypes.string
 };
