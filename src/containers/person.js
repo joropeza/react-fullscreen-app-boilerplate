@@ -21,11 +21,20 @@ class Person extends Component {
     	const { personReducer } = this.props;
     	const { person } = personReducer;
 
+
+
         if (person) {
+            const socialAccounts = _.map(person.socialAccounts, (socialAccount) => { 
+                return (<li key={socialAccount.id}>{socialAccount.service}</li>)
+            });
+            
 	        return (
 	        	<div>
 		        	<h1>{person.firstName + ' ' + person.lastName}</h1>
-	        	</div>
+	        	    <ul>
+                        {socialAccounts}
+                    </ul>
+                </div>
 	        );
     	} else {
     		return (<div></div>);
