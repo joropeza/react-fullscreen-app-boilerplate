@@ -20,7 +20,6 @@ class Person extends Component {
     render() {
     	const { personReducer } = this.props;
     	const { person } = personReducer;
-        console.log('person', person);
 
         if (person) {
 	        return (

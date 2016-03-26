@@ -5,6 +5,8 @@ import { Link } from 'react-router';
 
 import * as PeopleActions from '../actions/people';
 
+import Loading from '../components/layout/elements/loading';
+
 class People extends Component {
     constructor(props: Object, context: Object) {
         super(props, context);
@@ -14,13 +16,12 @@ class People extends Component {
         this._loadRoute(this.props);
     }
     _loadRoute(props) {
-        const { dispatch, people } = this.props;
+        const { dispatch } = this.props;
         dispatch(PeopleActions.getPeople(null));
     }
     render() {
-    	const { people } = this.props;
-        console.log('people', people);
-    	const peopleRows = _.map(people.people, (person, i) => { 
+    	const { peopleReducer } = this.props;
+    	const peopleRows = _.map(peopleReducer.people, (person, i) => { 
     		return (
                 <li key={person.id}>
                     <Link to={'/people/' + person.id}>
@@ -30,20 +31,24 @@ class People extends Component {
             );
     	});
 
-        return (
-        	<div>
-	        	<h1>People</h1>
-	        	<ul>
-	        		{peopleRows}
-	        	</ul>
-        	</div>
-        );
+        if (!peopleReducer.loading) {
+            return (
+            	<div>
+    	        	<h1>People</h1>
+    	        	<ul>
+    	        		{peopleRows}
+    	        	</ul>
+            	</div>
+            );
+        } else {
+            return (<Loading />);
+        }
     }
 }
 
 function select(state) {
     return {
-        people: state.people
+        peopleReducer: state.people
     };
 }
 
