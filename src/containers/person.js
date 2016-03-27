@@ -21,8 +21,6 @@ class Person extends Component {
     	const { personReducer } = this.props;
     	const { person } = personReducer;
 
-
-
         if (person) {
             const socialAccounts = _.map(person.socialAccounts, (socialAccount) => { 
                 return (<li key={socialAccount.id}>{socialAccount.service}</li>)
