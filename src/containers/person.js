@@ -4,6 +4,7 @@ import _ from 'lodash';
 import { Link } from 'react-router';
 
 import * as PeopleActions from '../actions/people';
+import * as BrandConstants from '../constants/brands';
 
 class Person extends Component {
     constructor(props: Object, context: Object) {
@@ -23,7 +24,17 @@ class Person extends Component {
 
         if (person) {
             const socialAccounts = _.map(person.socialAccounts, (socialAccount) => { 
-                return (<li key={socialAccount.id}>{socialAccount.service}</li>)
+                const brand = _.find(BrandConstants.Brands, (brand) => {
+                    return brand.name === socialAccount.service;
+                });
+                return (
+                    <li key={socialAccount.id}>
+                         <a href={brand.profilePrefix + socialAccount.id}>
+                             <i className={brand.iconClass}></i> 
+                             {socialAccount.id}
+                         </a>
+                     </li>
+                     );
             });
             
 	        return (

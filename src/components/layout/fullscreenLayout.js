@@ -20,7 +20,7 @@ const styles = {
 	},
 	fillArea: { 
 		padding: '8px',
-		background: 'rgba(0, 0, 255, .1)',
+		background: 'rgba(0, 0, 255, 0)',
 		display: 'flex',
 		flex: 1,
     	flexDirection: 'row',
@@ -29,7 +29,7 @@ const styles = {
     	alignContent: 'stretch',
 	},
 	fillAreaContent: {
-		background: 'rgba(0, 0, 0, .3)',
+		background: 'rgba(0, 0, 0, 0)',
     	border: '1px solid #000000',
     	overflow: 'auto', 
         width: '100%',

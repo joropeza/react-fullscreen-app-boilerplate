@@ -1,1 +1,0 @@
-//mappings of social services to base urls, glyphies, etc

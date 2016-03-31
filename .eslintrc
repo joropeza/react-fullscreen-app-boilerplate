@@ -17,7 +17,7 @@
         "block-scoped-var": 0,
         "comma-dangle": 0,
         "func-names": 0,
-        "indent": [2, 4],
+        "indent": [2, 4]
     },
     "plugins": [
         "react"
