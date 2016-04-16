@@ -1,4 +1,4 @@
-import * as peopleData from '../data/people';
+// import * as peopleData from '../data/people';
 import * as PeopleService from '../services/people';
 
 export const GET_PEOPLE_REQUEST = 'GET_PEOPLE_REQUEST';
