@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import FullScreenLayout from '../components/layout/fullscreenLayout';
+import FullScreenLayout from '../../boilerplate-layout/components/layout/fullscreenLayout';
 
-import HomePageContent from '../components/homePageContent';
-import HeaderContent from '../components/headerContent';
+import HomePageContent from '../components/content/homePageContent';
+import HeaderContent from '../components/content/headerContent';
 
 class AppRoot extends Component {
     render() {

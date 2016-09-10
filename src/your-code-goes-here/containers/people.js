@@ -5,7 +5,7 @@ import { Link } from 'react-router';
 
 import * as PeopleActions from '../actions/people';
 
-import Loading from '../components/layout/elements/loading';
+import Loading from '../../boilerplate-layout/components/layout/elements/loading';
 
 class People extends Component {
     constructor(props: Object, context: Object) {
