@@ -25,8 +25,8 @@ export default class HeaderContent extends Component {
           <div id="navbar" className="navbar-collapse collapse">
             <ul className="nav navbar-nav">
               <li className={route === 'HOME' ? 'active' : null}><Link to={'/'}>Home</Link></li>
-              <li><Link to={'/a'}>Yo</Link></li>
-              <li><Link to={'/b'}>Woah</Link></li>
+              <li><Link to={'/people'}>Peeps</Link></li>
+              <li><Link to={'/people/1'}>Me</Link></li>
             </ul>
           </div>
         </div>
