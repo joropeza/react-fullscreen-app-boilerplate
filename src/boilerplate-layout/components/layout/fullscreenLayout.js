@@ -29,7 +29,7 @@ const styles = {
     	alignContent: 'stretch',
 	},
 	fillAreaContent: {
-		background: 'rgba(0, 0, 0, .3)',
+		background: 'rgba(0, 0, 0, .1)',
     	border: '1px solid #000000',
     	overflow: 'auto', 
         width: '100%',
