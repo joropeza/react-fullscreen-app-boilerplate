@@ -14,11 +14,10 @@
     "parser": "babel-eslint",
     "extends": "airbnb",
     "rules": {
-        "block-scoped-var": 0,
-        "comma-dangle": 0,
         "func-names": 0,
         "indent": [2, 4],
-        "react/jsx-filename-extension": 0
+        "react/jsx-filename-extension": 0,
+        "react/jsx-indent": [2, 4]
     },
     "plugins": [
         "react"
