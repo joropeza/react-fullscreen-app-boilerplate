@@ -1,14 +1,14 @@
-import * as peopleActions from '../actions/people';
+import * as citiesActions from '../actions/cities';
 
 const initialState = {
     people: null,
     loading: false,
-    loaded: false
+    loaded: false,
 };
 
 export default function listBuilder(state = initialState, action = {}) {
     switch (action.type) {
-        case peopleActions.GET_PEOPLE_REQUEST:
+        case citiesActions.GET_CITIES_REQUEST:
             return (() => {
                 return {
                     ...state,
@@ -17,7 +17,7 @@ export default function listBuilder(state = initialState, action = {}) {
                     people: null
                 };
             })();
-        case peopleActions.GET_PEOPLE_REQUEST_SUCCESS:
+        case citiesActions.GET_CITIES_REQUEST_SUCCESS:
             return (() => {
                 return {
                     ...state,

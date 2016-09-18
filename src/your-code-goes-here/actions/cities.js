@@ -1,56 +1,55 @@
-import * as peopleData from '../data/people';
-import * as PeopleService from '../services/people';
+import * as CitiesService from '../services/cities';
 
-export const GET_PEOPLE_REQUEST = 'GET_PEOPLE_REQUEST';
-export const GET_PEOPLE_REQUEST_SUCCESS = 'GET_PEOPLE_REQUEST_SUCCESS';
-export const GET_PEOPLE_REQUEST_FAILURE = 'GET_PEOPLE_REQUEST_FAILURE';
+export const GET_CITIES_REQUEST = 'GET_CITIES_REQUEST';
+export const GET_CITIES_REQUEST_SUCCESS = 'GET_CITIES_REQUEST_SUCCESS';
+export const GET_CITIES_REQUEST_FAILURE = 'GET_CITIES_REQUEST_FAILURE';
 
-export const GET_PERSON_REQUEST = 'GET_PEOPLE_REQUEST';
-export const GET_PERSON_REQUEST_SUCCESS = 'GET_PEOPLE_REQUEST_SUCCESS';
-export const GET_PERSON_REQUEST_FAILURE = 'GET_PEOPLE_REQUEST_FAILURE';
+export const GET_CITY_REQUEST = 'GET_CITY_REQUEST';
+export const GET_CITY_REQUEST_SUCCESS = 'GET_CITY_REQUEST_SUCCESS';
+export const GET_CITY_REQUEST_FAILURE = 'GET_CITY_REQUEST_FAILURE';
 
-export function getPeopleRequest() {
+export function getCitiesRequest() {
     return {
-        type: GET_PEOPLE_REQUEST
+        type: GET_CITIES_REQUEST,
     };
 }
 
-export function getPeopleRequestSuccess(people) {
+export function getCitiesRequestSuccess(cities) {
     return {
-        type: GET_PEOPLE_REQUEST_SUCCESS,
-        data: people
+        type: GET_CITIES_REQUEST_SUCCESS,
+        data: cities,
     };
 }
 
-export function getPeople(options) {
+export function getCities(options) {
     return function (dispatch) {
-        dispatch(getPeopleRequest(options));
-        PeopleService.getMany()
-		.then(
-            results => dispatch(getPeopleRequestSuccess(results))
+        dispatch(getCitiesRequest(options));
+        CitiesService.getMany()
+        .then(
+            results => dispatch(getCitiesRequestSuccess(results))
         );
     };
 }
 
-export function getPersonRequest() {
+export function getCityRequest() {
     return {
-        type: GET_PERSON_REQUEST
+        type: GET_CITY_REQUEST,
     };
 }
 
-export function getPersonRequestSuccess(person) {
+export function getCityRequestSuccess(city) {
     return {
-        type: GET_PERSON_REQUEST_SUCCESS,
-        data: person
+        type: GET_CITY_REQUEST_SUCCESS,
+        data: city,
     };
 }
 
-export function getPerson(id) {
+export function getCity(id) {
     return function (dispatch) {
-        dispatch(getPersonRequest());
-        PeopleService.getOne(id)
-		.then(
-            results => dispatch(getPersonRequestSuccess(results))
+        dispatch(getCityRequest());
+        CitiesService.getOne(id)
+        .then(
+            results => dispatch(getCityRequestSuccess(results))
         );
     };
 }

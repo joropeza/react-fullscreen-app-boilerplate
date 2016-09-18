@@ -3,33 +3,33 @@ import { connect } from 'react-redux';
 import _ from 'lodash';
 import { Link } from 'react-router';
 
-import * as PeopleActions from '../actions/people';
+import * as CitiesActions from '../actions/cities';
 
 class Person extends Component {
     constructor(props: Object, context: Object) {
         super(props, context);
-        this._loadRoute = this._loadRoute.bind(this);
+        this.loadRoute = this.loadRoute.bind(this);
     }
     componentWillMount() {
-        this._loadRoute(this.props);
+        this.loadRoute(this.props);
     }
-    _loadRoute(props) {
-        const { dispatch, routeParams } = this.props;
-        dispatch(PeopleActions.getPerson(routeParams.id));
+    loadRoute(props) {
+        const { dispatch, routeParams } = props;
+        dispatch(CitiesActions.getCity(routeParams.id));
     }
     render() {
-    	const { personReducer } = this.props;
-    	const { person } = personReducer;
+        const { personReducer } = this.props;
+        const { person } = personReducer;
 
         if (person) {
-	        return (
-	        	<div>
-		        	<h1>{person.firstName + ' ' + person.lastName}</h1>
-	        	</div>
-	        );
-    	} else {
-    		return (<div></div>);
-    	}
+            return (
+                <div>
+                    <h1>{person.firstName + ' ' + person.lastName}</h1>
+                </div>
+            );
+        } else {
+            return (<div></div>);
+        }
     }
 }
 

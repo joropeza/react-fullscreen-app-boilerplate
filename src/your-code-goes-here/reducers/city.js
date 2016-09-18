@@ -1,4 +1,4 @@
-import * as peopleActions from '../actions/people';
+import * as citiesActions from '../actions/cities';
 
 const initialState = {
     person: null
@@ -6,21 +6,21 @@ const initialState = {
 
 export default function listBuilder(state = initialState, action = {}) {
     switch (action.type) {
-        case peopleActions.GET_PERSON_REQUEST:
-            return (() => {
-                return {
-                    ...state,
-                    person: null
-                };
-            })();
-        case peopleActions.GET_PERSON_REQUEST_SUCCESS:
-            return (() => {
-                return {
-                    ...state,
-                    person: action.data
-                };
-            })();
-        default:
-            return state;
+    case citiesActions.GET_CITY_REQUEST:
+        return (() => {
+            return {
+                ...state,
+                person: null,
+            };
+        })();
+    case citiesActions.GET_CITY_REQUEST_SUCCESS:
+        return (() => {
+            return {
+                ...state,
+                person: action.data,
+            };
+        })();
+    default:
+        return state;
     }
 }

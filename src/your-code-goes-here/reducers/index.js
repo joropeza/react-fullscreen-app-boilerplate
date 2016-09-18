@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux';
-import people from './people';
-import person from './person';
+import cities from './cities';
+import city from './city';
 
 const rootReducer = combineReducers({
-    people,
-    person,
+    cities,
+    city,
 });
 
 export default rootReducer;

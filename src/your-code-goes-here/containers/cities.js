@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import _ from 'lodash';
 import { Link } from 'react-router';
 
-import * as PeopleActions from '../actions/people';
+import * as CitiesActions from '../actions/cities';
 
 import Loading from '../../boilerplate-layout/components/layout/elements/loading';
 
@@ -16,29 +16,29 @@ class People extends Component {
         this._loadRoute(this.props);
     }
     _loadRoute(props) {
-        const { dispatch } = this.props;
-        dispatch(PeopleActions.getPeople(null));
+        const { dispatch } = props;
+        dispatch(CitiesActions.getCities(null));
     }
     render() {
-    	const { peopleReducer } = this.props;
-    	const peopleRows = _.map(peopleReducer.people, (person, i) => { 
-    		return (
+        const { peopleReducer } = this.props;
+        const peopleRows = _.map(peopleReducer.people, (person, i) => { 
+            return (
                 <li key={person.id}>
                     <Link to={'/people/' + person.id}>
                         {person.firstName + ' ' + person.lastName}
                     </Link>
                 </li>
             );
-    	});
+        });
 
         if (!peopleReducer.loading) {
             return (
-            	<div>
-    	        	<h1>People</h1>
-    	        	<ul>
-    	        		{peopleRows}
-    	        	</ul>
-            	</div>
+                <div>
+                    <h1>People</h1>
+                    <ul>
+                        {peopleRows}
+                    </ul>
+                </div>
             );
         } else {
             return (<Loading />);
