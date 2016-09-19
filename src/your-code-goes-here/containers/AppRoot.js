@@ -22,7 +22,11 @@ class AppRoot extends Component {
         contentOptions.component = (children) ? (<div>{children}</div>) : (<HomePageContent />);
 
         return (
-            <FullScreenLayout contentOptions={contentOptions} headerOptions={headerOptions} footerOptions={footerOptions} />
+            <FullScreenLayout
+              contentOptions={contentOptions}
+              headerOptions={headerOptions}
+              footerOptions={footerOptions}
+            />
         );
     }
 }
