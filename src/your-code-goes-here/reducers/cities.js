@@ -1,7 +1,7 @@
 import * as citiesActions from '../actions/cities';
 
 const initialState = {
-    people: null,
+    cities: null,
     loading: false,
     loaded: false,
 };
@@ -14,7 +14,7 @@ export default function listBuilder(state = initialState, action = {}) {
                     ...state,
                     loading: true,
                     loaded: false,
-                    people: null
+                    cities: null,
                 };
             })();
         case citiesActions.GET_CITIES_REQUEST_SUCCESS:
@@ -23,7 +23,7 @@ export default function listBuilder(state = initialState, action = {}) {
                     ...state,
                     loading: false,
                     loaded: true,
-                    people: action.data
+                    cities: action.data,
                 };
             })();
         default:

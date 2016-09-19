@@ -18,13 +18,13 @@ class Person extends Component {
         dispatch(CitiesActions.getCity(routeParams.id));
     }
     render() {
-        const { personReducer } = this.props;
-        const { person } = personReducer;
+        const { cityReducer } = this.props;
+        const { city } = cityReducer;
 
-        if (person) {
+        if (city) {
             return (
                 <div>
-                    <h1>{person.firstName + ' ' + person.lastName}</h1>
+                    <h1>{city.name}</h1>
                 </div>
             );
         } else {
@@ -35,7 +35,7 @@ class Person extends Component {
 
 function select(state) {
     return {
-        personReducer: state.person
+        cityReducer: state.city,
     };
 }
 

@@ -1,11 +1,11 @@
 import Promise from 'bluebird';
 import _ from 'lodash';
-import * as CitiesData from '../data/cities';
+import CitiesData from '../data/cities';
 
 export function getMany() {
     return new Promise(function (resolve, reject) {
         setTimeout(function() {
-            resolve(CitiesData.people);
+            resolve(CitiesData);
         });
     }, 1000);
 }
@@ -13,13 +13,13 @@ export function getMany() {
 export function getOne(id) {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
-            const person = _.find(PeopleData.people, (peep) => { 
+            const city = _.find(CitiesData, (peep) => {
                 return peep.id === id;
             });
-            if (person) {
-                resolve(person);
+            if (city) {
+                resolve(city);
             } else {
-                reject(new Error('person not found!'));
+                reject(new Error('city not found!'));
             }
         });
     }, 1000);

@@ -20,23 +20,24 @@ class People extends Component {
         dispatch(CitiesActions.getCities(null));
     }
     render() {
-        const { peopleReducer } = this.props;
-        const peopleRows = _.map(peopleReducer.people, (person, i) => { 
+        console.log(this.props);
+        const { citiesReducer } = this.props;
+        const cityRows = _.map(citiesReducer.cities, (city, i) => { 
             return (
-                <li key={person.id}>
-                    <Link to={'/people/' + person.id}>
-                        {person.firstName + ' ' + person.lastName}
+                <li key={city.id}>
+                    <Link to={'/city/' + city.id}>
+                        {city.name}
                     </Link>
                 </li>
             );
         });
 
-        if (!peopleReducer.loading) {
+        if (!citiesReducer.loading) {
             return (
                 <div>
-                    <h1>People</h1>
+                    <h1>West Coast Cities</h1>
                     <ul>
-                        {peopleRows}
+                        {cityRows}
                     </ul>
                 </div>
             );
@@ -48,7 +49,7 @@ class People extends Component {
 
 function select(state) {
     return {
-        peopleReducer: state.people
+        citiesReducer: state.cities,
     };
 }
 
