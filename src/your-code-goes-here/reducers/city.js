@@ -1,7 +1,7 @@
 import * as citiesActions from '../actions/cities';
 
 const initialState = {
-    person: null
+    city: null
 };
 
 export default function listBuilder(state = initialState, action = {}) {
@@ -10,14 +10,14 @@ export default function listBuilder(state = initialState, action = {}) {
         return (() => {
             return {
                 ...state,
-                person: null,
+                city: null,
             };
         })();
     case citiesActions.GET_CITY_REQUEST_SUCCESS:
         return (() => {
             return {
                 ...state,
-                person: action.data,
+                city: action.data,
             };
         })();
     default:

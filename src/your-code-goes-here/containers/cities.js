@@ -20,9 +20,8 @@ class People extends Component {
         dispatch(CitiesActions.getCities(null));
     }
     render() {
-        console.log(this.props);
         const { citiesReducer } = this.props;
-        const cityRows = _.map(citiesReducer.cities, (city, i) => { 
+        const cityRows = _.map(citiesReducer.cities, (city) => {
             return (
                 <li key={city.id}>
                     <Link to={'/city/' + city.id}>
