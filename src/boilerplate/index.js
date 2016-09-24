@@ -1,3 +1,5 @@
+// sourced from: https://github.com/gaearon/redux-devtools/blob/64f58b7010a1b2a71ad16716eb37ac1031f93915/examples/todomvc/index.js
+
 import React from 'react';
 import { render } from 'react-dom';
 import { AppContainer } from 'react-hot-loader';
