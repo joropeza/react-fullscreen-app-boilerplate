@@ -26,7 +26,7 @@ export function getCities(options) {
         dispatch(getCitiesRequest(options));
         CitiesService.getMany()
         .then(
-            results => dispatch(getCitiesRequestSuccess(results))
+            results => dispatch(getCitiesRequestSuccess(results)),
         );
     };
 }
@@ -49,7 +49,7 @@ export function getCity(id) {
         dispatch(getCityRequest());
         CitiesService.getOne(id)
         .then(
-            results => dispatch(getCityRequestSuccess(results))
+            results => dispatch(getCityRequestSuccess(results)),
         );
     };
 }

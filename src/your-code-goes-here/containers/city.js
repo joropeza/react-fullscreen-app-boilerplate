@@ -27,9 +27,8 @@ class Person extends Component {
                     <h1>{city.name}</h1>
                 </div>
             );
-        } else {
-            return (<div></div>);
         }
+        return (<div />);
     }
 }
 

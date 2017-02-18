@@ -7,8 +7,8 @@ import City from './containers/city';
 
 
 export default (
-  <Route path="/" component={AppRoot}>
-    <Route path="cities" component={Cities} />
-    <Route path="city/:id" component={City} />
-  </Route>
+    <Route path="/" component={AppRoot}>
+        <Route path="cities" component={Cities} />
+        <Route path="city/:id" component={City} />
+    </Route>
 );

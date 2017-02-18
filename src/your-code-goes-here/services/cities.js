@@ -3,8 +3,8 @@ import _ from 'lodash';
 import CitiesData from '../data/cities';
 
 export function getMany() {
-    return new Promise(function (resolve, reject) {
-        setTimeout(function() {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
             resolve(CitiesData);
         });
     }, 1000);
@@ -13,9 +13,7 @@ export function getMany() {
 export function getOne(id) {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
-            const city = _.find(CitiesData, (peep) => {
-                return peep.id === id;
-            });
+            const city = _.find(CitiesData, peep => peep.id === id);
             if (city) {
                 resolve(city);
             } else {

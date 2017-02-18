@@ -10,5 +10,5 @@ export default class Footer extends Component {
 }
 
 Footer.propTypes = {
-    children: PropTypes.element
+    children: PropTypes.element,
 };

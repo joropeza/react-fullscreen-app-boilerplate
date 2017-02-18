@@ -21,15 +21,13 @@ class People extends Component {
     }
     render() {
         const { citiesReducer } = this.props;
-        const cityRows = _.map(citiesReducer.cities, (city) => {
-            return (
-                <li key={city.id}>
-                    <Link to={'/city/' + city.id}>
-                        {city.name}
-                    </Link>
-                </li>
-            );
-        });
+        const cityRows = _.map(citiesReducer.cities, city => (
+            <li key={city.id}>
+                <Link to={`/city/${city.id}`}>
+                    {city.name}
+                </Link>
+            </li>
+            ));
 
         if (!citiesReducer.loading) {
             return (
@@ -40,9 +38,8 @@ class People extends Component {
                     </ul>
                 </div>
             );
-        } else {
-            return (<Loading />);
         }
+        return (<Loading />);
     }
 }
 

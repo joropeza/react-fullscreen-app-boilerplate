@@ -8,19 +8,19 @@ const enhancer = compose(
   DevTools.instrument(),
   persistState(
     window.location.href.match(
-      /[?&]debug_session=([^&#]+)\b/
-    )
-  )
+      /[?&]debug_session=([^&#]+)\b/,
+    ),
+  ),
 );
 
 export default function configureStore(initialState) {
-  const store = createStore(rootReducer, initialState, applyMiddleware(thunk), enhancer);
+    const store = createStore(rootReducer, initialState, applyMiddleware(thunk), enhancer);
 
-  if (module.hot) {
-    module.hot.accept('../../your-code-goes-here/reducers', () =>
-      store.replaceReducer(require('../../your-code-goes-here/reducers').default)
+    if (module.hot) {
+        module.hot.accept('../../your-code-goes-here/reducers', () =>
+      store.replaceReducer(require('../../your-code-goes-here/reducers').default),
     );
-  }
+    }
 
-  return store;
+    return store;
 }

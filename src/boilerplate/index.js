@@ -13,7 +13,7 @@ render(
       component={Root}
       props={{ store }}
     />,
-  document.getElementById('root')
+  document.getElementById('root'),
 );
 
 if (module.hot) {
@@ -23,7 +23,7 @@ if (module.hot) {
               component={require('./containers/Root').default}
               props={{ store }}
             />,
-            document.getElementById('root')
+            document.getElementById('root'),
         );
     });
 }

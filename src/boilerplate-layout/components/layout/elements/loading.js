@@ -7,9 +7,9 @@ class Loading extends React.Component {
     render() {
         return (
             <div>
-               <p className="center" style={{ marginTop: 100, opacity: 0.5 }}>
-                    <i className="fa fa-cog fa-spin fa-5x"></i>
-               </p>
+                <p className="center" style={{ marginTop: 100, opacity: 0.5 }}>
+                    <i className="fa fa-cog fa-spin fa-5x" />
+                </p>
             </div>
         );
     }

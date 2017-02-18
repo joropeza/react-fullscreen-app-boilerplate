@@ -10,5 +10,5 @@ export default class Header extends Component {
 }
 
 Header.propTypes = {
-    children: PropTypes.element
+    children: PropTypes.element,
 };
