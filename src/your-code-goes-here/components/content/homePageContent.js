@@ -10,7 +10,7 @@ const HomePageContent = () => {
             Full-screen app uses react and redux router to create a full screen experience.
         </p>
         <p className="lead">
-            <a href="https://github.com/joropeza/react-fullscreen-app-boilerplate" className="btn btn-lg btn-default">Visit Repo</a>
+            <a href="https://github.com/joropeza/react-fullscreen-app-boilerplate" className="btn btn-secondary">Visit Repo</a>
         </p>
         {tc}
     </div>);
