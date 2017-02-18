@@ -1,7 +1,9 @@
 import React from 'react';
+import testComponent from './test';
 
-const HomePageContent = () =>
-    (
+const HomePageContent = () => {
+    const tc = testComponent({});
+    return (
     <div className="inner cover">
         <h1 className="cover-heading">Full-screen single page app</h1>
         <p className="lead">
@@ -10,7 +12,8 @@ const HomePageContent = () =>
         <p className="lead">
             <a href="https://github.com/joropeza/react-fullscreen-app-boilerplate" className="btn btn-lg btn-default">Visit Repo</a>
         </p>
-    </div>
-    );
+        {tc}
+    </div>);
+};
 
 export default HomePageContent;

@@ -35,6 +35,7 @@
     "webpack-dev-server": "^1.14.1"
   },
   "dependencies": {
+    "bluebird": "^3.4.6",
     "cheerio": "^0.22.0",
     "history": "^4.0.0",
     "react": "^15.3.1",

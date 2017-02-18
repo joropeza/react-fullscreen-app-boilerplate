@@ -37,5 +37,5 @@ export default class HeaderContent extends Component {
 }
 
 HeaderContent.propTypes = {
-    route: PropTypes.string
+    route: PropTypes.string,
 };
