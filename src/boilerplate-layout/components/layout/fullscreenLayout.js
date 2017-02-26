@@ -1,4 +1,4 @@
-import React, { Component, PropTypes } from 'react';
+import React, { PropTypes } from 'react';
 
 import Content from './parcels/content';
 import Header from './parcels/header';
@@ -37,35 +37,33 @@ const styles = {
     },
 };
 
-export default class FullScreenLayout extends Component {
-    render() {
-        const { contentOptions, headerOptions, footerOptions } = this.props;
+const FullScreenLayout = (props) => {
+    const { contentOptions, headerOptions, footerOptions } = props;
 
-        const header = (headerOptions.useHeader) ?
-        (<Header>{headerOptions.component}</Header>) :
-        null;
+    const header = (headerOptions.useHeader) ?
+    (<Header>{headerOptions.component}</Header>) :
+    null;
 
-        const footer = (footerOptions.useFooter) ?
-        (<Footer>{footerOptions.component}</Footer>) :
-        null;
+    const footer = (footerOptions.useFooter) ?
+    (<Footer>{footerOptions.component}</Footer>) :
+    null;
 
-        return (
-            <div style={styles.parent}>
-                <div className="flexbox-item header">
-                    {header}
-                </div>
-                <div style={styles.fillArea}>
-                    <div style={styles.fillAreaContent}>
-                        <Content>{contentOptions.component}</Content>
-                    </div>
-                </div>
-                <div className="flexbox-item footer">
-                    {footer}
+    return (
+        <div style={styles.parent}>
+            <div className="flexbox-item header">
+                {header}
+            </div>
+            <div style={styles.fillArea}>
+                <div style={styles.fillAreaContent}>
+                    <Content>{contentOptions.component}</Content>
                 </div>
             </div>
-        );
-    }
-}
+            <div className="flexbox-item footer">
+                {footer}
+            </div>
+        </div>
+    );
+};
 
 FullScreenLayout.propTypes = {
     headerOptions: PropTypes.object,

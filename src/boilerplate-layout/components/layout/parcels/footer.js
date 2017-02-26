@@ -1,14 +1,12 @@
-import React, { Component, PropTypes } from 'react';
+import React, { PropTypes } from 'react';
 
-export default class Footer extends Component {
-    render() {
-        const { children } = this.props;
-        return (
-            <div>{children}</div>
-        );
-    }
-}
+const Footer = (props) => {
+    const { children } = props;
+    return (
+        <div>{children}</div>
+    );
+};
 
 Footer.propTypes = {
-    children: PropTypes.element,
+    children: PropTypes.element.isRequired,
 };
