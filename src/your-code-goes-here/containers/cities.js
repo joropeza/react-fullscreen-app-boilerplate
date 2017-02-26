@@ -7,17 +7,14 @@ import * as CitiesActions from '../actions/cities';
 
 import Loading from '../../boilerplate-layout/components/layout/elements/loading';
 
+const loadRoute = (props) => {
+    const { dispatch } = props;
+    dispatch(CitiesActions.getCities(null));
+};
+
 class People extends Component {
-    constructor(props: Object, context: Object) {
-        super(props, context);
-        this._loadRoute = this._loadRoute.bind(this);
-    }
     componentWillMount() {
-        this._loadRoute(this.props);
-    }
-    _loadRoute(props) {
-        const { dispatch } = props;
-        dispatch(CitiesActions.getCities(null));
+        loadRoute(this.props);
     }
     render() {
         const { citiesReducer } = this.props;
@@ -48,6 +45,10 @@ function select(state) {
         citiesReducer: state.cities,
     };
 }
+
+People.propTypes = {
+    citiesReducer: React.PropTypes.object.isRequired,
+};
 
 // Wrap the component to inject dispatch and state into it
 export default connect(select)(People);
