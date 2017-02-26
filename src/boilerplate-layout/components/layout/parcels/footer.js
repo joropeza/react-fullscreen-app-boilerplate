@@ -10,3 +10,5 @@ const Footer = (props) => {
 Footer.propTypes = {
     children: PropTypes.element.isRequired,
 };
+
+export default Footer;

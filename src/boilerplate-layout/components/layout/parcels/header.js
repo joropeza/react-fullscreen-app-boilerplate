@@ -10,3 +10,5 @@ const Header = (props) => {
 Header.propTypes = {
     children: PropTypes.element.isRequired,
 };
+
+export default Header;

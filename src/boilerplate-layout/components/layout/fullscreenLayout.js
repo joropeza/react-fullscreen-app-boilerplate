@@ -75,3 +75,5 @@ FullScreenLayout.defaultProps = {
     footerOptions: { useFooter: false },
     contentOptions: { component: (<div />) },
 };
+
+export default FullScreenLayout;
